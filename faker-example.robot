@@ -2,7 +2,7 @@
 Library  FakerLibrary
 
 *** Test Cases ***
-Faker_example
+Faker_profile
     ${address} =  FakerLibrary.address
     ${country} =  FakerLibrary.country
     ${email} =  FakerLibrary.email
@@ -19,3 +19,11 @@ Faker_example
     ...             ${\n}phone_number: ${phone_number}
     ...             ${\n}=======================================
     log to console  ${profile}
+
+Faker_seeding
+    [Tags]  not_working
+    FakerLibrary.Seed  ${5}
+    ${name1} =  FakerLibrary.email
+    FakerLibrary.Seed  ${5}
+    ${name2} =  FakerLibrary.email
+    Should Be Equal As Strings  ${name1}  ${name2}
