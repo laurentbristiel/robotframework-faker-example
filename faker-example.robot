@@ -21,7 +21,6 @@ Faker_profile
     log to console  ${profile}
 
 Faker_seeding
-    # working only with master of FakerLibrary
     FakerLibrary.Seed  ${5}
     ${name1} =  FakerLibrary.email
     FakerLibrary.Seed  ${5}
