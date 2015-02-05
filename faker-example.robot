@@ -21,9 +21,22 @@ Faker_profile
     log to console  ${profile}
 
 Faker_seeding
-    [Tags]  not_working
+    # working only with master of FakerLibrary
     FakerLibrary.Seed  ${5}
     ${name1} =  FakerLibrary.email
     FakerLibrary.Seed  ${5}
     ${name2} =  FakerLibrary.email
     Should Be Equal As Strings  ${name1}  ${name2}
+
+browsers
+    # not sure to understand the results...
+    ${chrome} =  FakerLibrary.chrome
+    ${firefox} =  FakerLibrary.firefox
+    ${internet_explorer} =  FakerLibrary.Internet_explorer
+    ${browsers} =  catenate
+    ...             ${\n}=======================================
+    ...             ${\n}${chrome}
+    ...             ${\n}${firefox}
+    ...             ${\n}${internet_explorer}
+    ...             ${\n}=======================================
+    log to console  ${browsers}
