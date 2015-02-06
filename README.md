@@ -20,7 +20,7 @@ Usage:
 
 This test:
 
-.. code:: robotframework
+```
     *** Test Cases ***
     Faker_profile
         ${address} =  FakerLibrary.address
@@ -39,7 +39,7 @@ This test:
         ...             ${\n}phone_number: ${phone_number}
         ...             ${\n}=======================================
         log to console  ${profile}
-
+```
 gives this output:
 
 ```
