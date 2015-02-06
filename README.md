@@ -1,6 +1,7 @@
 # robotframework-fakerlibrary-example
 
 Example of Robot Framework Faker Library usage.
+
 This library generates random data to be used in test cases.
 
 Resources for the library:
@@ -20,7 +21,6 @@ Usage:
 This test:
 
 .. code:: robotframework
-
     *** Test Cases ***
     Faker_profile
         ${address} =  FakerLibrary.address
