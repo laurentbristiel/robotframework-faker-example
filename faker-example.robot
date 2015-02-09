@@ -2,7 +2,7 @@
 Library  FakerLibrary
 
 *** Test Cases ***
-Faker_profile
+user_profile
     ${address} =  FakerLibrary.address
     ${country} =  FakerLibrary.country
     ${email} =  FakerLibrary.email
@@ -19,6 +19,27 @@ Faker_profile
     ...             ${\n}phone_number: ${phone_number}
     ...             ${\n}=======================================
     log to console  ${profile}
+
+openidm_user_profile
+    ${given_name} =  FakerLibrary.first_name
+    ${sn} =  FakerLibrary.last_name
+    ${user_id} =  set variable  ${given_name}${sn}
+    ${mail} =  FakerLibrary.email
+    ${phone_number} =  FakerLibrary.Numerify  +%%-%%%%-%%%%
+    ${description} =  FakerLibrary.Sentence
+    ${password} =  FakerLibrary.Password
+    ${profile} =  catenate
+    ...             ${\n}=======================================
+    ...             ${\n}given_name: ${given_name}
+    ...             ${\n}sn: ${sn}
+    ...             ${\n}user_id: ${user_id}
+    ...             ${\n}mail: ${mail}
+    ...             ${\n}phone_number: ${phone_number}
+    ...             ${\n}description: ${description}
+    ...             ${\n}password: ${password}
+    ...             ${\n}=======================================
+    log to console  ${profile}
+
 
 Faker_seeding
     FakerLibrary.Seed  ${5}
