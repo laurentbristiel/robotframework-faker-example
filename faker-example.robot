@@ -40,6 +40,15 @@ openidm_user_profile
     ...             ${\n}=======================================
     log to console  ${profile}
 
+misc_keywords
+    ${safe_email} =  FakerLibrary.Safe_Email
+    ${timezone} =  FakerLibrary.Timezone
+    ${url} =  FakerLibrary.url
+    ${misc} =  catenate
+    ...             ${\n}Safe Email: ${safe_email}
+    ...             ${\n}timezone: ${timezone}
+    ...             ${\n}url: ${url}
+    log to console  ${misc}
 
 Faker_seeding
     FakerLibrary.Seed  ${5}
