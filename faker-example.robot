@@ -58,7 +58,6 @@ Faker_seeding
     Should Be Equal As Strings  ${name1}  ${name2}
 
 browsers
-    # not sure to understand the results...
     ${chrome} =  FakerLibrary.chrome
     ${firefox} =  FakerLibrary.firefox
     ${internet_explorer} =  FakerLibrary.Internet_explorer
@@ -69,3 +68,11 @@ browsers
     ...             ${\n}${internet_explorer}
     ...             ${\n}=======================================
     log to console  ${browsers}
+
+country_locale
+    ${Language_code} =  FakerLibrary.Language_code
+    ${Locale} =  FakerLibrary.Locale
+    ${output} =  catenate
+    ...             ${\n}Language_code: ${Language_code}
+    ...             ${\n}Locale: ${Locale}
+    log to console  ${output}
