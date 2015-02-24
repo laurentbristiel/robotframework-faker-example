@@ -10,7 +10,7 @@ Resources for the library:
 
 Usage:
 
-1. install Robot Framework and SSH Library
+1. install Robot Framework and RF Faker Library
     - pip install robotframework
     - pip install pip install robotframework-faker
 
@@ -18,7 +18,7 @@ Usage:
     - pybot faker-example.robot
     
 
-This test:
+For example, this test:
 
 ```
     *** Test Cases ***
@@ -40,7 +40,7 @@ This test:
         ...             ${\n}=======================================
         log to console  ${profile}
 ```
-gives this output:
+gives an output similar to this:
 
 ```
 $ pybot --test Faker_profile faker-example.robot
