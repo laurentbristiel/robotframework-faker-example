@@ -12,7 +12,7 @@ Usage:
 
 1. install Robot Framework and RF Faker Library
     - pip install robotframework
-    - pip install pip install robotframework-faker
+    - pip install robotframework-faker
 
 2. launch Robot tests
     - pybot faker-example.robot
