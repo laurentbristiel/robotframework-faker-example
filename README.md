@@ -1,6 +1,6 @@
-# robotframework-fakerlibrary-example
+# Robot Framework Fakerlibrary Examples
 
-Example of Robot Framework Faker Library usage.
+Set of examples of Robot Framework Faker Library usage.
 
 This library generates random data to be used in test cases.
 
@@ -11,11 +11,12 @@ Resources for the library:
 Usage:
 
 1. install Robot Framework and RF Faker Library
-    - pip install robotframework
-    - pip install robotframework-faker
+    - `pip install robotframework`
+    - `pip install robotframework-faker`
 
 2. launch Robot tests
-    - pybot faker-example.robot
+    - whole suite: `pybot faker-example.robot`
+    - specific test: `pybot --test country_locale faker-example.robot`
     
 
 For example, this test:
@@ -40,7 +41,7 @@ For example, this test:
         ...             ${\n}=======================================
         log to console  ${profile}
 ```
-gives an output similar to this:
+produce an output similar to this:
 
 ```
 $ pybot --test Faker_profile faker-example.robot
