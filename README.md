@@ -41,10 +41,10 @@ For example, this test:
         ...             ${\n}=======================================
         log to console  ${profile}
 ```
-produce an output similar to this:
+will produce an output similar to this:
 
 ```
-$ pybot --test Faker_profile faker-example.robot
+$ pybot --test user_profile faker-example.robot
 =======================================
 Faker-Example
 =======================================
@@ -57,6 +57,25 @@ APO AE 43357
 country: Tokelau
 email: renner.bridgette@greenholt.info
 phone_number: 484.461.9307x600
+=======================================
+Faker_profile                  | PASS |
+---------------------------------------
+```
+or that one:
+```
+$ pybot --test user_profile faker-example.robot
+=======================================
+Faker-Example
+=======================================
+Faker_profile                   .......
+=======================================
+first_name: Sara
+last_name: Gaylord
+address: PSC 2996, Box 3404
+APO AA 22214
+country: Cook Islands
+email: luca99@yahoo.com
+phone_number: 250.723.9835x7058
 =======================================
 Faker_profile                  | PASS |
 ---------------------------------------
