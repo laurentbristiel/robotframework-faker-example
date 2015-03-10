@@ -1,5 +1,7 @@
 # Robot Framework Fakerlibrary Examples
 
+.. image:: https://travis-ci.org/laurentbristiel/robotframework-faker-example.svg?branch=master
+
 Set of examples of Robot Framework Faker Library usage.
 
 This library generates random data to be used in test cases.
