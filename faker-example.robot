@@ -76,3 +76,17 @@ country_locale
     ...             ${\n}Language_code: ${Language_code}
     ...             ${\n}Locale: ${Locale}
     log to console  ${output}
+
+generate_csv_file_for_openidm_sample4
+    ${string} =  set variable  "firstName", "uid", "lastName", "email", "employeeNumber"${\n}
+    :FOR  ${i}  IN RANGE  3
+    \  ${given_name} =  FakerLibrary.first_name
+    \  ${last_name} =  FakerLibrary.last_name
+    \  ${uid} =  set variable  ${given_name}${last_name}
+    \  ${email} =  FakerLibrary.email
+    \  ${employee_number} =  FakerLibrary.Numerify  %%%%%%
+    \  ${string} =  catenate  ${string}
+    ...  "${given_name}", "${last_name}", "${uid}", "${email}", "${employee_number}"${\n}
+    log to console  ${string}
+    # and then you can create the file with the string:
+    # create file  /path/to/Installs/openidm/samples/sample4/data/hr.csv  ${string}
