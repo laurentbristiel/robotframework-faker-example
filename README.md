@@ -17,8 +17,8 @@ Usage:
     - `pip install robotframework-faker`
 
 2. launch Robot tests
-    - whole suite: `pybot faker-example.robot`
-    - specific test: `pybot --test country_locale faker-example.robot`
+    - whole suite: `robot faker-example.robot`
+    - specific test: `robot --test country_locale faker-example.robot`
     
 
 For example, this test:
@@ -46,7 +46,7 @@ For example, this test:
 will produce an output similar to this:
 
 ```
-$ pybot --test user_profile faker-example.robot
+$ robot --test user_profile faker-example.robot
 =======================================
 Faker-Example
 =======================================
@@ -63,9 +63,9 @@ phone_number: 484.461.9307x600
 Faker_profile                  | PASS |
 ---------------------------------------
 ```
-or that one:
+or to that:
 ```
-$ pybot --test user_profile faker-example.robot
+$ robot --test user_profile faker-example.robot
 =======================================
 Faker-Example
 =======================================
