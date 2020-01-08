@@ -6,4 +6,4 @@ install:
   - "pip install -r requirements.txt"
 # command to run tests
 script:
-  - pybot faker-example.robot
+  - robot faker-example.robot
