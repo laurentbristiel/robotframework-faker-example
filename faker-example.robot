@@ -9,7 +9,7 @@ user_profile
     ${first_name} =  FakerLibrary.first_name
     ${last_name} =  FakerLibrary.last_name
     ${phone_number} =  FakerLibrary.phone_number
-    ${profile} =  catenate
+    ${profile} =  Catenate
     ...             ${\n}=======================================
     ...             ${\n}first_name: ${first_name}
     ...             ${\n}last_name: ${last_name}
@@ -18,9 +18,9 @@ user_profile
     ...             ${\n}email: ${email}
     ...             ${\n}phone_number: ${phone_number}
     ...             ${\n}=======================================
-    log to console  ${profile}
+    Log To Console  ${profile}
 
-openidm_user_profile
+another_user_profile
     ${given_name} =  FakerLibrary.first_name
     ${sn} =  FakerLibrary.last_name
     ${user_id} =  set variable  ${given_name}${sn}
@@ -28,7 +28,7 @@ openidm_user_profile
     ${phone_number} =  FakerLibrary.Numerify  +%%-%%%%-%%%%
     ${description} =  FakerLibrary.Sentence
     ${password} =  FakerLibrary.Password
-    ${profile} =  catenate
+    ${profile} =  Catenate
     ...             ${\n}=======================================
     ...             ${\n}given_name: ${given_name}
     ...             ${\n}sn: ${sn}
@@ -38,17 +38,17 @@ openidm_user_profile
     ...             ${\n}description: ${description}
     ...             ${\n}password: ${password}
     ...             ${\n}=======================================
-    log to console  ${profile}
+    Log To Console  ${profile}
 
 misc_keywords
     ${safe_email} =  FakerLibrary.Safe_Email
     ${timezone} =  FakerLibrary.Timezone
     ${url} =  FakerLibrary.url
-    ${misc} =  catenate
+    ${misc} =  Catenate
     ...             ${\n}Safe Email: ${safe_email}
     ...             ${\n}timezone: ${timezone}
     ...             ${\n}url: ${url}
-    log to console  ${misc}
+    Log To Console  ${misc}
 
 Faker_seeding
     FakerLibrary.Seed  ${5}
@@ -61,32 +61,33 @@ browsers
     ${chrome} =  FakerLibrary.chrome
     ${firefox} =  FakerLibrary.firefox
     ${internet_explorer} =  FakerLibrary.Internet_explorer
-    ${browsers} =  catenate
+    ${browsers} =  Catenate
     ...             ${\n}=======================================
     ...             ${\n}${chrome}
     ...             ${\n}${firefox}
     ...             ${\n}${internet_explorer}
     ...             ${\n}=======================================
-    log to console  ${browsers}
+    Log To Console  ${browsers}
 
 country_locale
     ${Language_code} =  FakerLibrary.Language_code
     ${Locale} =  FakerLibrary.Locale
-    ${output} =  catenate
+    ${output} =  Catenate
     ...             ${\n}Language_code: ${Language_code}
     ...             ${\n}Locale: ${Locale}
-    log to console  ${output}
+    Log To Console  ${output}
 
-generate_csv_file_for_openidm_sample4
+generate_csv_file
     ${string} =  set variable  "firstName", "uid", "lastName", "email", "employeeNumber"${\n}
-    :FOR  ${i}  IN RANGE  3
-    \  ${given_name} =  FakerLibrary.first_name
-    \  ${last_name} =  FakerLibrary.last_name
-    \  ${uid} =  set variable  ${given_name}${last_name}
-    \  ${email} =  FakerLibrary.email
-    \  ${employee_number} =  FakerLibrary.Numerify  %%%%%%
-    \  ${string} =  catenate  ${string}
+    FOR  ${i}  IN RANGE  3
+      ${given_name} =  FakerLibrary.first_name
+      ${last_name} =  FakerLibrary.last_name
+      ${uid} =  set variable  ${given_name}${last_name}
+      ${email} =  FakerLibrary.email
+      ${employee_number} =  FakerLibrary.Numerify  %%%%%%
+      ${string} =  Catenate  ${string}
     ...  "${given_name}", "${last_name}", "${uid}", "${email}", "${employee_number}"${\n}
-    log to console  ${string}
+    END
+    Log To Console  ${string}
     # and then you can create the file with the string:
     # create file  /path/to/Installs/openidm/samples/sample4/data/hr.csv  ${string}

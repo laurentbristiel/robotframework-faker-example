@@ -7,14 +7,14 @@ Set of examples of Robot Framework Faker Library usage.
 This library generates random data to be used in test cases.
 
 Resources for the library:
-- [Library source code](https://github.com/guykisel/robotframework-faker)
-- [Keywords documentation](https://guykisel.github.io/robotframework-faker/)
+- [Library source code](https://github.com/MarketSquare/robotframework-faker)
+- [Keywords documentation](https://marketsquare.github.io/robotframework-faker/)
 
 Usage:
 
 1. install Robot Framework and RF Faker Library
-    - `pip install robotframework`
-    - `pip install robotframework-faker`
+    - `python3 -m pip install robotframework`
+    - `python3 -m pip install robotframework-faker`
 
 2. launch Robot tests
     - whole suite: `robot faker-example.robot`
@@ -32,7 +32,7 @@ For example, this test:
         ${first_name} =  FakerLibrary.first_name
         ${last_name} =  FakerLibrary.last_name
         ${phone_number} =  FakerLibrary.phone_number
-        ${profile} =  catenate
+        ${profile} =  Catenate
         ...             ${\n}=======================================
         ...             ${\n}first_name: ${first_name}
         ...             ${\n}last_name: ${last_name}
@@ -41,7 +41,7 @@ For example, this test:
         ...             ${\n}email: ${email}
         ...             ${\n}phone_number: ${phone_number}
         ...             ${\n}=======================================
-        log to console  ${profile}
+        Log To Console  ${profile}
 ```
 will produce an output similar to this:
 
