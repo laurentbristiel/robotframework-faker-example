@@ -23,7 +23,7 @@ Usage:
 
 For example, this test:
 
-```
+```robotframework
     *** Test Cases ***
     Faker_profile
         ${address} =  FakerLibrary.address
@@ -45,7 +45,7 @@ For example, this test:
 ```
 will produce an output similar to this:
 
-```
+```console
 $ robot --test user_profile faker-example.robot
 =======================================
 Faker-Example
@@ -64,7 +64,7 @@ Faker_profile                  | PASS |
 ---------------------------------------
 ```
 or to that:
-```
+```console
 $ robot --test user_profile faker-example.robot
 =======================================
 Faker-Example
