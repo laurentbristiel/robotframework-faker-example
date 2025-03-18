@@ -1,6 +1,6 @@
 # Robot Framework Fakerlibrary Examples
 
-[![Build Status](https://travis-ci.org/laurentbristiel/robotframework-faker-example.svg?branch=master)](https://travis-ci.org/laurentbristiel/robotframework-faker-example)
+![GitHub Actions](https://github.com/laurentbristiel/robotframework-faker-example/actions/workflows/robot-tests.yml/badge.svg)
 
 Set of examples of Robot Framework Faker Library usage.
 
