@@ -40,6 +40,30 @@ another_user_profile
     ...             ${\n}=======================================
     Log To Console  ${profile}
 
+yet_another_user_profile_with_groups
+    GROUP  Prepare data elements
+        ${given_name} =  FakerLibrary.first_name
+        ${sn} =  FakerLibrary.last_name
+        ${user_id} =  set variable  ${given_name}${sn}
+        ${mail} =  FakerLibrary.email
+        ${phone_number} =  FakerLibrary.Numerify  +%%-%%%%-%%%%
+        ${description} =  FakerLibrary.Sentence
+        ${password} =  FakerLibrary.Password
+    END
+    GROUP  Prepare final data
+        ${profile} =  Catenate
+        ...             ${\n}=======================================
+        ...             ${\n}given_name: ${given_name}
+        ...             ${\n}sn: ${sn}
+        ...             ${\n}user_id: ${user_id}
+        ...             ${\n}mail: ${mail}
+        ...             ${\n}phone_number: ${phone_number}
+        ...             ${\n}description: ${description}
+        ...             ${\n}password: ${password}
+        ...             ${\n}=======================================
+        Log To Console  ${profile}
+    END
+
 misc_keywords
     ${safe_email} =  FakerLibrary.Safe_Email
     ${timezone} =  FakerLibrary.Timezone
